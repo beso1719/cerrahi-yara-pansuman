@@ -1,0 +1,847 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cerrahi Yara ve Pansuman Rehberi</title>
+<meta name="description" content="Hemşirelik öğrencileri için cerrahi yara bakımı, pansuman çeşitleri, adım adım steril pansuman ve hasta eğitimi konuşma metni.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#f7f4ee; --card:#ffffff; --ink:#1d2b2f; --muted:#5c6b6e; --line:#e3ddd2;
+  --teal:#0f5c5c; --teal-soft:#e2efec; --coral:#d4553b; --coral-soft:#fbe7e1;
+  --amber:#b7791f; --amber-soft:#fdf1dc; --green:#2f7d4f; --green-soft:#e3f2e8;
+  --blue:#2b5f8f; --blue-soft:#e3edf7;
+  --radius:14px; --shadow:0 1px 2px rgba(0,0,0,.04),0 6px 24px rgba(29,43,47,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#141a1c; --card:#1c2427; --ink:#e8eeec; --muted:#9fb0b0; --line:#2c3639;
+    --teal:#5ec2b7; --teal-soft:#1d3433; --coral:#ef8a70; --coral-soft:#3a2420;
+    --amber:#e3b25a; --amber-soft:#3a2f1c; --green:#6cc391; --green-soft:#1c3326;
+    --blue:#7fb0e0; --blue-soft:#1c2b3a; --shadow:none;
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.65 Figtree,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;line-height:1.2;margin:0 0 .5em}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem);color:var(--teal)}
+h3{font-size:1.2rem}
+p{margin:0 0 1em}
+a{color:var(--teal)}
+small,.muted{color:var(--muted)}
+/* top bar */
+.top{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 16px}
+.brand{font-family:Fraunces,serif;font-weight:700;color:var(--teal);text-decoration:none;white-space:nowrap}
+.nav{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none;flex:1}
+.nav::-webkit-scrollbar{display:none}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--muted);font-weight:500;font-size:.9rem;padding:6px 10px;border-radius:999px}
+.nav a.on,.nav a:hover{background:var(--teal-soft);color:var(--teal)}
+.progress{position:absolute;left:0;bottom:-1px;height:2px;background:var(--coral);width:0}
+/* layout */
+main{max-width:980px;margin:0 auto;padding:0 16px 80px}
+section{padding:56px 0 8px;border-bottom:1px dashed var(--line)}
+section:last-of-type{border-bottom:0}
+.kicker{display:inline-block;font-weight:600;font-size:.82rem;color:var(--coral);margin-bottom:6px}
+.lead{font-size:1.1rem;color:var(--muted);max-width:68ch}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.note{border-left:4px solid var(--teal);background:var(--teal-soft);padding:12px 16px;border-radius:0 10px 10px 0;margin:16px 0}
+.warn{border-left-color:var(--coral);background:var(--coral-soft)}
+.tip{border-left-color:var(--amber);background:var(--amber-soft)}
+.ok{border-left-color:var(--green);background:var(--green-soft)}
+.note b:first-child{display:block;margin-bottom:2px}
+ul.clean{padding-left:1.1em;margin:0 0 1em}
+ul.clean li{margin:.25em 0}
+.pill{display:inline-block;font-size:.78rem;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--teal-soft);color:var(--teal);margin:2px 4px 2px 0}
+.pill.c{background:var(--coral-soft);color:var(--coral)}
+.pill.a{background:var(--amber-soft);color:var(--amber)}
+.pill.g{background:var(--green-soft);color:var(--green)}
+.pill.b{background:var(--blue-soft);color:var(--blue)}
+/* hero */
+.hero{padding:56px 0 40px;display:grid;gap:28px;grid-template-columns:1.2fr .8fr;align-items:center}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);color:var(--ink)}
+.hero h1 em{color:var(--teal);font-style:italic}
+.hero .btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;border:0;cursor:pointer;font:600 .95rem Figtree,sans-serif;padding:11px 18px;border-radius:999px;text-decoration:none;background:var(--teal);color:#fff}
+.btn.ghost{background:transparent;color:var(--teal);border:1.5px solid var(--teal)}
+.btn.sm{padding:7px 13px;font-size:.85rem}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .btn:not(.ghost){color:#0d1c1c}}
+.map{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.map a{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--ink);font-weight:600;font-size:.9rem}
+.map a span{display:block;color:var(--muted);font-weight:400;font-size:.78rem}
+@media (max-width:760px){.hero{grid-template-columns:1fr}}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:.93rem}
+.tbl th,.tbl td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-size:.8rem;color:var(--muted);font-weight:600}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--card)}
+/* phases */
+.phases{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;background:var(--card)}
+.phase{padding:16px;border-right:1px solid var(--line)}
+.phase:last-child{border-right:0}
+.phase .t{font-size:.78rem;font-weight:600;color:var(--coral)}
+@media (max-width:760px){.phases{grid-template-columns:1fr}.phase{border-right:0;border-bottom:1px solid var(--line)}}
+/* dressing cards */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 13px;font:500 .88rem Figtree,sans-serif;cursor:pointer}
+.chip.on{border-color:var(--teal);background:var(--teal);color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chip.on{color:#0d1c1c}}
+.dcard{display:flex;flex-direction:column;gap:6px;cursor:pointer;transition:transform .15s}
+.dcard:hover{transform:translateY(-2px)}
+.dcard .ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--teal-soft)}
+.dcard h3{margin:4px 0 0}
+.dcard .sum{color:var(--muted);font-size:.92rem;margin:0}
+.dcard .more{display:none;font-size:.92rem;border-top:1px solid var(--line);padding-top:10px;margin-top:6px}
+.dcard.open .more{display:block}
+.dcard .tog{font-size:.82rem;font-weight:600;color:var(--teal);margin-top:auto}
+.dl{display:grid;grid-template-columns:auto 1fr;gap:4px 10px;margin:0}
+.dl dt{font-weight:600;font-size:.85rem;color:var(--muted)}
+.dl dd{margin:0}
+/* selector */
+.sel{display:grid;gap:16px}
+.q{display:flex;flex-direction:column;gap:8px}
+.q label{font-weight:600}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+.res{min-height:90px}
+/* steps */
+.steps{counter-reset:s;list-style:none;padding:0;margin:0;display:grid;gap:10px}
+.step{display:grid;grid-template-columns:44px 1fr;gap:14px;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:14px 16px;align-items:start}
+.step .n{counter-increment:s;width:36px;height:36px;border-radius:50%;background:var(--teal-soft);color:var(--teal);display:grid;place-items:center;font-weight:700;cursor:pointer;border:2px solid transparent}
+.step .n::before{content:counter(s)}
+.step.done .n{background:var(--green);color:#fff}
+.step.done .n::before{content:"✓"}
+.step.done{opacity:.7}
+.step h3{font-family:Figtree,sans-serif;font-size:1.02rem;font-weight:700;margin:6px 0 4px}
+.step p,.step ul{margin:0 0 .4em;font-size:.95rem}
+.step .why{font-size:.86rem;color:var(--muted);font-style:italic}
+.phase-h{font-family:Fraunces,serif;font-size:1.05rem;color:var(--coral);margin:22px 0 8px}
+.bar{height:8px;background:var(--line);border-radius:99px;overflow:hidden;margin:6px 0 14px}
+.bar i{display:block;height:100%;background:var(--green);width:0;transition:width .3s}
+/* figures */
+figure{margin:0}
+figure svg{width:100%;height:auto;display:block}
+figcaption{font-size:.85rem;color:var(--muted);margin-top:8px}
+/* script */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}
+.tab{border:0;background:var(--card);border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:999px;font:600 .9rem Figtree,sans-serif;cursor:pointer}
+.tab.on{background:var(--coral);border-color:var(--coral);color:#fff}
+.pane{display:none}
+.pane.on{display:block}
+.line{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:12px 0;border-bottom:1px solid var(--line)}
+.line:last-child{border-bottom:0}
+.who{font-weight:700;font-size:.82rem;color:var(--teal);padding-top:2px}
+.who.h{color:var(--coral)}
+.who.x{color:var(--amber)}
+.say{font-size:1.02rem}
+.say q{quotes:"“" "”"}
+.act{display:block;font-size:.86rem;color:var(--muted);font-style:italic;margin-top:4px}
+@media (max-width:600px){.line{grid-template-columns:1fr;gap:2px}}
+/* quiz */
+.qz{display:grid;gap:12px}
+.qi .ch{display:grid;gap:6px;margin-top:8px}
+.qi button{text-align:left;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:10px 12px;border-radius:10px;font:500 .95rem Figtree,sans-serif;cursor:pointer}
+.qi button.right{border-color:var(--green);background:var(--green-soft)}
+.qi button.wrong{border-color:var(--coral);background:var(--coral-soft)}
+.qi .ex{display:none;font-size:.9rem;margin-top:8px;color:var(--muted)}
+.qi.ans .ex{display:block}
+.score{position:sticky;bottom:12px;display:inline-block;background:var(--ink);color:var(--paper);padding:8px 16px;border-radius:999px;font-weight:600}
+footer{max-width:980px;margin:0 auto;padding:24px 16px 48px;color:var(--muted);font-size:.85rem}
+@media print{
+  .top,.btns,.filters,.tabs,.no-print,.score{display:none!important}
+  .pane{display:block!important;break-inside:avoid}
+  .dcard .more{display:block}
+  body{background:#fff}
+  section{padding-top:20px}
+}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <a class="brand" href="#basla">Pansuman Rehberi</a>
+    <nav class="nav" id="nav">
+      <a href="#yara">Cerrahi yara</a>
+      <a href="#iyilesme">İyileşme</a>
+      <a href="#degerlendirme">Değerlendirme</a>
+      <a href="#cesitler">Pansuman çeşitleri</a>
+      <a href="#secim">Hangisini seçmeli?</a>
+      <a href="#uygulama">Adım adım</a>
+      <a href="#dren">Dren &amp; dikiş</a>
+      <a href="#hatalar">Sık hatalar</a>
+      <a href="#kayit">Kayıt</a>
+      <a href="#test">Kendini test et</a>
+      <a href="#konusma">Hasta konuşması</a>
+    </nav>
+  </div>
+  <div class="progress" id="prog"></div>
+</header>
+
+<main>
+<!-- HERO -->
+<div class="hero" id="basla">
+  <div>
+    <span class="kicker">Hemşirelik öğrencileri için</span>
+    <h1>Cerrahi yara bakımı ve <em>pansuman</em>, baştan sona.</h1>
+    <p class="lead">Önce konuyu öğren: cerrahi yara nedir, nasıl iyileşir, hangi pansuman ne zaman kullanılır, steril pansuman adım adım nasıl yapılır. Sonra hastaya nasıl anlatacağını hazır konuşma metniyle çalış.</p>
+    <div class="btns">
+      <a class="btn" href="#yara">Öğrenmeye başla ↓</a>
+      <a class="btn ghost" href="#konusma">Konuşma metnine git</a>
+    </div>
+  </div>
+  <div class="map">
+    <a href="#yara">1 · Temel bilgi<span>Yara sınıfları, iyileşme</span></a>
+    <a href="#cesitler">2 · Pansumanlar<span>13 çeşit, ne zaman?</span></a>
+    <a href="#uygulama">3 · Uygulama<span>Adım adım işlem listesi</span></a>
+    <a href="#test">4 · Test<span>12 soruluk mini sınav</span></a>
+    <a href="#konusma">5 · Konuşma<span>Hastaya anlatım metni</span></a>
+    <a href="#kayit">6 · Kayıt<span>Örnek hemşire notu</span></a>
+  </div>
+</div>
+
+<!-- 1. CERRAHİ YARA -->
+<section id="yara">
+  <span class="kicker">Bölüm 1</span>
+  <h2>Cerrahi yara nedir?</h2>
+  <p class="lead">Cerrahi yara, ameliyat sırasında steril koşullarda bilerek açılan kesidir (insizyon). Kenarları düzgündür, genellikle dikiş, zımba (stapler), steril strip ya da doku yapıştırıcısıyla kapatılır. Hemşirenin temel görevi bu yarayı <b>enfeksiyondan korumak</b> ve <b>iyileşmeyi izlemektir</b>.</p>
+
+  <div class="grid g2" style="margin-top:18px">
+    <figure class="card">
+      <svg viewBox="0 0 400 220" role="img" aria-label="Deri katmanları ve kapatılmış insizyon">
+        <rect x="0" y="0" width="400" height="220" fill="none"/>
+        <rect x="20" y="40" width="360" height="26" rx="4" fill="#f2c9a8"/>
+        <rect x="20" y="66" width="360" height="62" fill="#eaa98a"/>
+        <rect x="20" y="128" width="360" height="62" rx="4" fill="#f6e3a6"/>
+        <path d="M200 40 L200 150" stroke="#9b2d20" stroke-width="3"/>
+        <g stroke="#1d2b2f" stroke-width="2.5" fill="none">
+          <path d="M184 52 q16 26 32 0"/><path d="M184 52 L184 46"/><path d="M216 52 L216 46"/>
+        </g>
+        <text x="30" y="58" font-size="13" fill="#1d2b2f" font-family="Figtree">Epidermis</text>
+        <text x="30" y="100" font-size="13" fill="#1d2b2f" font-family="Figtree">Dermis</text>
+        <text x="30" y="163" font-size="13" fill="#1d2b2f" font-family="Figtree">Deri altı yağ dokusu</text>
+        <text x="226" y="30" font-size="13" fill="#9b2d20" font-family="Figtree" font-weight="600">İnsizyon + dikiş</text>
+        <path d="M225 26 L205 44" stroke="#9b2d20" stroke-width="1.5"/>
+      </svg>
+      <figcaption>Primer kapatılmış insizyon: kenarlar yan yana getirilir, 24–48 saatte üstü epitelle örtülmeye başlar.</figcaption>
+    </figure>
+    <div class="card">
+      <h3>Yara kapatma yöntemleri</h3>
+      <ul class="clean">
+        <li><b>Dikiş (sütür):</b> en sık yöntem. Emilen / emilmeyen olabilir.</li>
+        <li><b>Zımba (stapler):</b> hızlı; genelde 7–14. günde özel aletle alınır.</li>
+        <li><b>Steril strip:</b> küçük kesiler veya dikiş alındıktan sonra destek için.</li>
+        <li><b>Doku yapıştırıcısı:</b> küçük, gerilimsiz kesilerde; üstüne krem/merhem sürülmez.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:28px">Cerrahi yara sınıflaması (CDC)</h3>
+  <p>Ameliyatın kontaminasyon riskine göre yaralar dörde ayrılır. Sınıf yükseldikçe <b>cerrahi alan enfeksiyonu</b> riski artar.</p>
+  <div class="scroll">
+  <table class="tbl">
+    <tr><th>Sınıf</th><th>Tanım</th><th>Örnek</th><th>Enfeksiyon riski</th></tr>
+    <tr><td><span class="pill g">I · Temiz</span></td><td>Enfekte olmayan, sindirim/solunum/üriner sisteme girilmeyen yara</td><td>Fıtık onarımı, tiroidektomi</td><td>~%1–2</td></tr>
+    <tr><td><span class="pill b">II · Temiz-kontamine</span></td><td>Kontrollü şekilde sindirim, solunum veya üriner sisteme girilir</td><td>Kolesistektomi, apendektomi (perfore değil)</td><td>~%3–11</td></tr>
+    <tr><td><span class="pill a">III · Kontamine</span></td><td>Açık taze travma, belirgin bağırsak içeriği taşması, steriliteye büyük ihlal</td><td>Taze travmatik yara</td><td>~%10–17</td></tr>
+    <tr><td><span class="pill c">IV · Kirli / enfekte</span></td><td>Önceden var olan enfeksiyon, perforasyon, nekrotik doku</td><td>Perfore apandisit, apse drenajı</td><td>&gt;%27</td></tr>
+  </table>
+  </div>
+  <p class="muted" style="margin-top:8px"><small>Oranlar kaynağa göre değişir; amaç sınıflar arasındaki risk farkını görmektir.</small></p>
+</section>
+
+<!-- 2. İYİLEŞME -->
+<section id="iyilesme">
+  <span class="kicker">Bölüm 2</span>
+  <h2>Yara nasıl iyileşir?</h2>
+  <h3>İyileşme şekilleri</h3>
+  <div class="grid g3">
+    <div class="card"><span class="pill g">Primer</span><h3>Birincil niyet</h3><p>Kenarlar dikişle yan yana getirilir. Doku kaybı az, iz ince, iyileşme hızlı. <b>Çoğu cerrahi yara böyledir.</b></p></div>
+    <div class="card"><span class="pill a">Sekonder</span><h3>İkincil niyet</h3><p>Yara açık bırakılır, alttan granülasyon dokusuyla dolar. Enfekte veya doku kaybı olan yaralarda. Uzun sürer, iz geniştir.</p></div>
+    <div class="card"><span class="pill b">Tersiyer</span><h3>Gecikmiş primer</h3><p>Kirli yara birkaç gün açık bırakılıp temizlenir, enfeksiyon kontrol altına alınınca kapatılır.</p></div>
+  </div>
+
+  <h3 style="margin-top:28px">İyileşmenin 4 evresi</h3>
+  <div class="phases">
+    <div class="phase"><div class="t">Dakikalar – saatler</div><h3>1. Hemostaz</h3><p>Damarlar daralır, trombositler pıhtı oluşturur, kanama durur.</p></div>
+    <div class="phase"><div class="t">0 – 4/6. gün</div><h3>2. İnflamasyon</h3><p>Kızarıklık, hafif ödem, ısı artışı <b>normaldir</b>. Akyuvarlar yarayı temizler.</p></div>
+    <div class="phase"><div class="t">4. gün – 3. hafta</div><h3>3. Proliferasyon</h3><p>Granülasyon dokusu, yeni damarlar, kollajen. Yara kenarları birleşir, epitel örtülür.</p></div>
+    <div class="phase"><div class="t">3. hafta – 1-2 yıl</div><h3>4. Maturasyon</h3><p>Kollajen yeniden düzenlenir, iz soluklaşır. İz dokusu normal derinin ~%80 gücüne ulaşır.</p></div>
+  </div>
+  <div class="note tip"><b>Akılda tut</b>İlk 3–4 günde insizyon çevresinde 1–2 cm'lik hafif kızarıklık ve ödem normaldir. <b>4. günden sonra artan</b> kızarıklık, ısı, ağrı veya akıntı enfeksiyonu düşündürür.</div>
+
+  <h3 style="margin-top:24px">İyileşmeyi geciktiren faktörler</h3>
+  <div class="grid g4">
+    <div class="card"><b>Hasta kaynaklı</b><ul class="clean"><li>Diyabet (yüksek kan şekeri)</li><li>İleri yaş</li><li>Obezite</li><li>Sigara</li></ul></div>
+    <div class="card"><b>Beslenme</b><ul class="clean"><li>Protein eksikliği</li><li>C vitamini, çinko eksikliği</li><li>Sıvı yetersizliği</li></ul></div>
+    <div class="card"><b>İlaçlar</b><ul class="clean"><li>Kortikosteroidler</li><li>Kemoterapi</li><li>İmmünsüpresanlar</li></ul></div>
+    <div class="card"><b>Yerel</b><ul class="clean"><li>Enfeksiyon</li><li>Yara üzerinde gerilim / basınç</li><li>Kötü dolaşım, hematom</li></ul></div>
+  </div>
+</section>
+
+<!-- 3. DEĞERLENDİRME -->
+<section id="degerlendirme">
+  <span class="kicker">Bölüm 3</span>
+  <h2>Yarayı değerlendirmek</h2>
+  <p class="lead">Her pansumanda yarayı “okursun”. Gördüğünü sonra kayda geçireceksin, o yüzden neye bakacağını bilmek gerekir.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Bak · Kontrol listesi</h3>
+      <ul class="clean">
+        <li><b>Yer ve boyut:</b> uzunluk × genişlik × derinlik (cm)</li>
+        <li><b>Yara kenarları:</b> birleşik mi (aproksime), aralık var mı?</li>
+        <li><b>Dikiş / zımba:</b> yerinde mi, gerilim var mı?</li>
+        <li><b>Çevre deri:</b> kızarıklık, ödem, ısı, maserasyon (beyazlaşma)</li>
+        <li><b>Akıntı:</b> miktar, renk, koku</li>
+        <li><b>Ağrı:</b> 0–10 skala; artıyor mu?</li>
+        <li><b>Dren:</b> varsa çıkış yeri ve drenaj miktarı</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Akıntı (eksüda) tipleri</h3>
+      <table class="tbl">
+        <tr><td><span class="pill b">Seröz</span></td><td>Berrak, açık sarı, sulu. Normal.</td></tr>
+        <tr><td><span class="pill a">Serosanguinöz</span></td><td>Açık pembe, sulu. İlk günlerde normal.</td></tr>
+        <tr><td><span class="pill c">Sanguinöz</span></td><td>Parlak kırmızı, kan. Artarsa kanama → haber ver.</td></tr>
+        <tr><td><span class="pill c">Pürülan</span></td><td>Koyu, sarı-yeşil, kötü kokulu. Enfeksiyon belirtisi.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card" style="border-color:var(--coral)">
+      <h3 style="color:var(--coral)">Cerrahi alan enfeksiyonu belirtileri</h3>
+      <p>Genelde ameliyattan sonraki <b>3–7. günlerde</b> ortaya çıkar.</p>
+      <ul class="clean">
+        <li>Artan kızarıklık ve yayılan ısı</li>
+        <li>Şişlik, sertlik, artan ağrı</li>
+        <li>Pürülan, kötü kokulu akıntı</li>
+        <li>38 °C üzeri ateş, halsizlik</li>
+        <li>Yara kenarlarının ayrılması</li>
+      </ul>
+    </div>
+    <div class="card" style="border-color:var(--coral)">
+      <h3 style="color:var(--coral)">Acil durumlar</h3>
+      <p><b>Dehisens:</b> yara katmanlarının ayrılması. Genelde 5–10. gün; öksürük, kusma, ıkınma ile tetiklenir. Hasta “bir şey koptu/açıldı” hissini tarif edebilir.</p>
+      <p><b>Evisserasyon:</b> organların (bağırsak) yaradan dışarı çıkması. <b>ACİL:</b></p>
+      <ul class="clean">
+        <li>Hastayı yalnız bırakma, yardım çağır</li>
+        <li>Steril, serum fizyolojikle nemlendirilmiş gazlı bezle ört</li>
+        <li>Dizler hafif bükük, sırtüstü Fowler'e yakın pozisyon</li>
+        <li>Ağızdan bir şey verme, hekime hemen bildir</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note"><b>TIME çerçevesi (açık/kronik yaralarda)</b><b style="display:inline">T</b>issue (doku: canlı mı nekrotik mi) · <b style="display:inline">I</b>nfection/Inflammation · <b style="display:inline">M</b>oisture (nem dengesi) · <b style="display:inline">E</b>dge (yara kenarı). Pansuman seçerken bu dört soruyu sor.</div>
+</section>
+
+<!-- 4. ÇEŞİTLER -->
+<section id="cesitler">
+  <span class="kicker">Bölüm 4</span>
+  <h2>Pansuman çeşitleri</h2>
+  <p class="lead">Modern yara bakımının ana fikri: yara <b>ne çok kuru ne çok ıslak</b> olmalı. Nemli ortamda hücreler daha hızlı göç eder, ağrı azalır. Her pansuman bu dengeyi farklı şekilde sağlar. Kartlara dokunarak detayını aç.</p>
+
+  <div class="card" style="margin:16px 0">
+    <h3>İdeal pansuman ne yapar?</h3>
+    <div class="grid g3" style="gap:6px 14px">
+      <div>✔ Nemli ortamı korur</div><div>✔ Fazla akıntıyı emer</div><div>✔ Gaz alışverişine izin verir</div>
+      <div>✔ Bakterilere bariyer olur</div><div>✔ Yarayı sıcak tutar</div><div>✔ Çıkarırken yaraya yapışmaz, acıtmaz</div>
+    </div>
+  </div>
+
+  <div class="filters" id="filters">
+    <button class="chip on" data-f="all">Hepsi</button>
+    <button class="chip" data-f="az">Az akıntı</button>
+    <button class="chip" data-f="cok">Çok akıntı</button>
+    <button class="chip" data-f="kuru">Kuru / nekrotik</button>
+    <button class="chip" data-f="enf">Enfekte</button>
+    <button class="chip" data-f="kapali">Kapalı insizyon</button>
+    <button class="chip" data-f="derin">Derin / boşluklu</button>
+  </div>
+  <div class="grid g3" id="dressings"></div>
+  <p class="muted" style="margin-top:10px"><small>Değişim süreleri genel bilgidir; her ürünün kendi kullanım talimatı ve kurum protokolü önceliklidir.</small></p>
+</section>
+
+<!-- 5. SEÇİM -->
+<section id="secim">
+  <span class="kicker">Bölüm 5</span>
+  <h2>Hangi pansumanı seçmeli?</h2>
+  <p class="lead">Üç soruyu cevapla, uygun pansuman seçeneklerini gör. (Öğrenme aracıdır; gerçek karar hekim/yara bakım hemşiresi ve kurum protokolüyle verilir.)</p>
+  <div class="card sel">
+    <div class="q"><label>1. Yara durumu nasıl?</label>
+      <div class="opts" data-q="durum">
+        <button class="chip" data-v="kapali">Kapalı, dikişli insizyon</button>
+        <button class="chip" data-v="acik">Açık yara (granülasyonla iyileşiyor)</button>
+        <button class="chip" data-v="derin">Derin / boşluklu / tünelli</button>
+      </div></div>
+    <div class="q"><label>2. Akıntı miktarı?</label>
+      <div class="opts" data-q="akinti">
+        <button class="chip" data-v="yok">Yok / kuru</button>
+        <button class="chip" data-v="az">Az</button>
+        <button class="chip" data-v="orta">Orta</button>
+        <button class="chip" data-v="cok">Çok</button>
+      </div></div>
+    <div class="q"><label>3. Enfeksiyon belirtisi var mı?</label>
+      <div class="opts" data-q="enf">
+        <button class="chip" data-v="hayir">Hayır</button>
+        <button class="chip" data-v="evet">Evet / şüpheli</button>
+      </div></div>
+    <div class="res note" id="selres"><b>Sonuç</b>Soruları cevapladıkça öneri burada görünecek.</div>
+  </div>
+</section>
+
+<!-- 6. UYGULAMA -->
+<section id="uygulama">
+  <span class="kicker">Bölüm 6</span>
+  <h2>Steril pansuman adım adım</h2>
+  <p class="lead">Aşağıdaki liste kapalı cerrahi insizyon pansumanı içindir. Adımın numarasına dokunarak işaretle; pratik yaparken ilerlemeni görürsün.</p>
+  <div class="note ok"><b>Altın kurallar</b>Temizden kirliye · Yukarıdan aşağıya · İçten dışa · <b>Her silişte yeni gazlı bez</b> · Steril alanı belin altına indirme, arkanı dönme.</div>
+  <div class="no-print" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:200px"><div class="bar"><i id="stepbar"></i></div></div>
+    <span id="stepcount" class="muted">0 / 0 adım</span>
+    <button class="btn sm ghost" id="stepreset">Sıfırla</button>
+  </div>
+  <div id="stepwrap"></div>
+
+  <h3 style="margin-top:32px">Temizleme tekniği</h3>
+  <div class="grid g2">
+    <figure class="card">
+      <svg viewBox="0 0 320 220" role="img" aria-label="İnsizyon temizleme yönü">
+        <line x1="160" y1="30" x2="160" y2="190" stroke="#9b2d20" stroke-width="4" stroke-linecap="round"/>
+        <g fill="none" stroke-width="3" stroke-linecap="round">
+          <path d="M160 40 L160 180" stroke="#2f7d4f" stroke-dasharray="1 0" opacity=".0"/>
+          <path d="M175 40 L175 180" stroke="#2f7d4f"/>
+          <path d="M145 40 L145 180" stroke="#2b5f8f"/>
+          <path d="M200 40 L200 180" stroke="#2f7d4f" opacity=".7"/>
+          <path d="M120 40 L120 180" stroke="#2b5f8f" opacity=".7"/>
+          <path d="M228 40 L228 180" stroke="#2f7d4f" opacity=".45"/>
+          <path d="M92 40 L92 180" stroke="#2b5f8f" opacity=".45"/>
+        </g>
+        <g fill="#2f7d4f"><path d="M171 176 l4 10 l4 -10z"/><path d="M196 176 l4 10 l4 -10z"/><path d="M224 176 l4 10 l4 -10z"/></g>
+        <g fill="#2b5f8f"><path d="M141 176 l4 10 l4 -10z"/><path d="M116 176 l4 10 l4 -10z"/><path d="M88 176 l4 10 l4 -10z"/></g>
+        <text x="160" y="212" font-size="12" text-anchor="middle" fill="currentColor" font-family="Figtree">1. önce insizyon hattı → sonra yanlara doğru</text>
+        <text x="160" y="20" font-size="12" text-anchor="middle" fill="#9b2d20" font-family="Figtree" font-weight="600">insizyon</text>
+      </svg>
+      <figcaption>İnsizyon: önce kesi hattının üzerinden yukarıdan aşağıya tek hareket, sonra kesiye paralel çizgilerle dışa doğru. Her çizgide yeni gazlı bez.</figcaption>
+    </figure>
+    <figure class="card">
+      <svg viewBox="0 0 320 220" role="img" aria-label="Dren çevresi dairesel temizlik">
+        <circle cx="160" cy="105" r="10" fill="#9b2d20"/>
+        <g fill="none" stroke="#2f7d4f" stroke-width="3">
+          <circle cx="160" cy="105" r="30"/><circle cx="160" cy="105" r="52" opacity=".7"/><circle cx="160" cy="105" r="74" opacity=".45"/>
+        </g>
+        <path d="M160 105 L160 30" stroke="#1d2b2f" stroke-width="1.5" stroke-dasharray="4 4"/>
+        <path d="M204 60 l10 -4 l-4 10z" fill="#2f7d4f"/>
+        <text x="160" y="212" font-size="12" text-anchor="middle" fill="currentColor" font-family="Figtree">dren çıkışından dışa doğru daireler</text>
+      </svg>
+      <figcaption>Dren çevresi: dren çıkış noktasından başlayıp dışa doğru genişleyen daireler. Dren alanı ayrı temizlenir ve insizyondan <b>sonra</b> yapılır.</figcaption>
+    </figure>
+  </div>
+  <div class="note warn"><b>Ne kullanılmaz?</b>Hidrojen peroksit (oksijenli su) ve alkol yara içine kullanılmaz: sağlıklı granülasyon dokusuna zarar verir, yakar. Yara temizliği için standart sıvı <b>oda sıcaklığında %0,9 serum fizyolojik (SF)</b>'tir. Antiseptik (povidon iyot, klorheksidin) kullanımı kurum protokolüne göredir.</div>
+
+  <h3 style="margin-top:24px">Kapalı insizyon için önemli bilgiler</h3>
+  <div class="grid g3">
+    <div class="card"><b>İlk pansuman</b><p>Ameliyathanede konan pansuman genellikle <b>48 saat</b> açılmaz; akıntı/kanama, ıslanma veya ayrılma varsa erken değiştirilir.</p></div>
+    <div class="card"><b>İlk 48 saat</b><p>Yara temizliğinde steril serum fizyolojik kullanılır. Sonrasında hekim izin verdiyse hasta duş alabilir.</p></div>
+    <div class="card"><b>Pansumanı açık bırakma</b><p>Akıntısız, epitelize kapalı insizyonlar hekim kararıyla açık bırakılabilir ya da hafif bir pansumanla korunur.</p></div>
+  </div>
+</section>
+
+<!-- 7. DREN & DİKİŞ -->
+<section id="dren">
+  <span class="kicker">Bölüm 7</span>
+  <h2>Dren bakımı ve dikiş alma</h2>
+  <div class="grid g2">
+    <div class="card">
+      <h3>Dren bakımı</h3>
+      <ul class="clean">
+        <li>Dren çıkış yeri ayrı pansumanla kapatılır; ortası kesik (Y) gazlı bez veya dren pansumanı kullanılır.</li>
+        <li>Çıkış yeri insizyondan sonra, dairesel hareketle temizlenir.</li>
+        <li>Drenin bükülmediğini, katlanmadığını, gerilmediğini kontrol et; torba/hazne yara seviyesinin <b>altında</b> durmalı.</li>
+        <li>Kapalı vakumlu drenlerde (ör. Hemovac) haznenin sıkıştırılmış (vakumlu) olduğunu kontrol et.</li>
+        <li>Drenaj miktarı, rengi ve kıvamı vardiya sonunda ölçülür ve kaydedilir.</li>
+        <li>Ani drenaj artışı, parlak kırmızı kan veya drenajın birden kesilmesi → hekime bildir.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Dikiş / zımba alma (hekim istemiyle)</h3>
+      <ul class="clean">
+        <li>Genelde: yüz 3–5 gün · gövde 7–10 gün · eklem üstü/ayak 10–14 gün.</li>
+        <li>Önce yara SF ile temizlenir.</li>
+        <li><b>Dikiş:</b> düğüm penset ile hafifçe kaldırılır, deriye en yakın yerden kesilir, ipin dışarıdaki kısmı derinin içinden geçmeyecek şekilde çekilir.</li>
+        <li><b>Zımba:</b> zımba sökücünün alt ucu zımbanın altına yerleştirilir, sıkılınca zımba açılır ve çıkarılır.</li>
+        <li>Önce aralıklı (birer atlayarak) alınıp yara kenarları kontrol edilebilir; ayrılma varsa durdurulur, hekime bildirilir.</li>
+        <li>Sonrasında gerekirse steril strip uygulanır.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 8. HATALAR -->
+<section id="hatalar">
+  <span class="kicker">Bölüm 8</span>
+  <h2>Sık yapılan hatalar</h2>
+  <div class="grid g2" id="mistakes"></div>
+</section>
+
+<!-- 9. KAYIT -->
+<section id="kayit">
+  <span class="kicker">Bölüm 9</span>
+  <h2>Kayıt (hemşire notu)</h2>
+  <p class="lead">“Kayda geçmeyen işlem yapılmamış sayılır.” Pansumandan sonra şunları yaz:</p>
+  <div class="grid g2">
+    <div class="card">
+      <ul class="clean">
+        <li>Tarih ve saat</li>
+        <li>Yaranın yeri, boyutu, kenarları</li>
+        <li>Akıntının miktarı, rengi, kokusu</li>
+        <li>Çevre derinin durumu</li>
+        <li>Kullanılan temizleme sıvısı ve pansuman türü</li>
+        <li>Hastanın ağrısı ve işlemi nasıl tolere ettiği</li>
+        <li>Verilen eğitim ve hastanın anlayıp anlamadığı</li>
+        <li>Hekime bildirilen bir durum varsa</li>
+      </ul>
+    </div>
+    <div class="card" style="background:var(--teal-soft)">
+      <b>Örnek not</b>
+      <p style="font-family:ui-monospace,Consolas,monospace;font-size:.88rem;margin-top:8px">12.11.2026 – 10:30<br>Postop 2. gün. Abdomen orta hatta 12 cm vertikal insizyon. Pansuman açıldı; gazlı bezde az miktarda serosanguinöz akıntı. Yara kenarları birleşik, dikişler yerinde. İnsizyon çevresinde 1 cm hafif kızarıklık, ısı artışı ve pürülan akıntı yok. Ağrı 3/10. Yara SF ile temizlendi, steril ada pansuman uygulandı. Hastaya enfeksiyon belirtileri ve pansumanı kuru tutma konusunda eğitim verildi; hasta belirtileri doğru şekilde tekrar etti. — Öğr. Hemş. ...</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10. TEST -->
+<section id="test">
+  <span class="kicker">Bölüm 10</span>
+  <h2>Kendini test et</h2>
+  <p class="lead">12 soru. Cevaba dokun, açıklamayı gör.</p>
+  <div class="qz" id="quiz"></div>
+  <div style="text-align:center;margin-top:16px"><span class="score" id="score">0 / 12</span></div>
+</section>
+
+<!-- 11. KONUŞMA -->
+<section id="konusma">
+  <span class="kicker">Bölüm 11</span>
+  <h2>Hastaya nasıl anlatılır? · Konuşma metni</h2>
+  <p class="lead">Aşağıdaki metin pansuman öncesi, sırası ve sonrası hastayla yapılacak konuşmanın örneğidir. Ezberlemek yerine akışı öğren ve kendi cümlelerinle söyle. <b>Sade dil kullan</b>: “insizyon” yerine “ameliyat yeri”, “eksüda” yerine “akıntı”.</p>
+
+  <div class="grid g4" style="margin:16px 0">
+    <div class="card"><b>1. Tanış</b><br><small>Adını, rolünü söyle, kimliği doğrula</small></div>
+    <div class="card"><b>2. Açıkla &amp; izin al</b><br><small>Ne yapacağını, ne kadar süreceğini</small></div>
+    <div class="card"><b>3. Uygularken anlat</b><br><small>Her adımı önceden haber ver</small></div>
+    <div class="card"><b>4. Eğit &amp; kontrol et</b><br><small>Geri anlatım (teach-back)</small></div>
+  </div>
+
+  <div class="tabs no-print" id="tabs">
+    <button class="tab on" data-t="p1">Pansuman öncesi</button>
+    <button class="tab" data-t="p2">Pansuman sırasında</button>
+    <button class="tab" data-t="p3">Sonrası &amp; ev eğitimi</button>
+    <button class="tab" data-t="p4">Zor durumlar</button>
+  </div>
+
+  <div class="card pane on" id="p1">
+    <h3>Pansuman öncesi</h3>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Günaydın, ben öğrenci hemşire [Adın]. Bugün sizinle ben ilgileneceğim. Adınızı ve doğum tarihinizi söyleyebilir misiniz?</q><span class="act">Kol bandıyla kimliği doğrula (iki tanımlayıcı: ad-soyad + doğum tarihi).</span></div></div>
+    <div class="line"><div class="who h">Hasta</div><div class="say"><q>Ayşe Yılmaz, 3 Mayıs 1968.</q></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Teşekkür ederim Ayşe Hanım. Bugün ameliyat yerinizin pansumanını değiştireceğim. Eski bandı çıkaracağım, yaranıza bakacağım, temizleyip yeni ve temiz bir bant koyacağım. Yaklaşık 10–15 dakika sürecek. Uygun mu, başlayabilir miyim?</q></div></div>
+    <div class="line"><div class="who h">Hasta</div><div class="say"><q>Acıyacak mı?</q></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Bandı çıkarırken biraz çekme hissi olabilir, temizlerken de hafif serinlik hissedersiniz. Çok yavaş ve nazik yapacağım. Şu an ağrınızı 0 ile 10 arasında puanlasanız kaç dersiniz?</q><span class="act">Ağrı 4 ve üstüyse: istem varsa analjeziği verip işleme 30 dakika sonra başlamayı öner.</span></div></div>
+    <div class="line"><div class="who h">Hasta</div><div class="say"><q>3 civarı.</q></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Tamam. İşlem sırasında acırsa ya da durmamı isterseniz elinizi kaldırmanız yeterli, hemen dururum. Şimdi perdeyi çekeyim, sizi biraz sırtüstü rahat bir pozisyona alalım. Sadece yaranın olduğu bölgeyi açacağım, gerisini örtülü tutacağım.</q><span class="act">Mahremiyet: perde/paravan, gereksiz bölgeleri örtü altında bırak.</span></div></div>
+  </div>
+
+  <div class="card pane" id="p2">
+    <h3>Pansuman sırasında</h3>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Önce ellerimi yıkayıp eldiven giyiyorum. Şimdi eski bandı çıkaracağım; derinizi tutarak yavaşça çekeceğim.</q><span class="act">Bandı yaraya doğru, deriye paralel ve düşük açıyla çek; deriyi destekle.</span></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Bant çıktı. Yaranıza bakıyorum… Kenarları güzel birleşmiş, dikişler yerinde. Akıntı çok az ve normal görünüyor. İyileşme iyi gidiyor.</q><span class="act">Gözlemini olumlu ve dürüst biçimde paylaş. Sorun görürsen panik yaratmadan: “Bunu doktorunuzla da paylaşacağım.”</span></div></div>
+    <div class="line"><div class="who h">Hasta</div><div class="say"><q>Bakmaya korkuyorum.</q></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Çok normal, bakmak zorunda değilsiniz. Ama isterseniz gösterebilirim; evde nasıl görünmesi gerektiğini bilmeniz işinize yarar. Hazır olduğunuzda.</q></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Şimdi temiz eldivenlerimi giydim, yarayı serum fizyolojik denilen tuzlu suyla temizleyeceğim. Biraz serin gelebilir… Nasılsınız, devam edebilir miyim?</q><span class="act">Her siliş öncesi haber ver; ara ara hastanın yüz ifadesini kontrol et.</span></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Temizlik bitti. Şimdi kurulayıp yeni bandı yapıştırıyorum. Üzerine bugünün tarihini ve saatini yazıyorum ki bir sonraki değişim zamanını bilelim.</q></div></div>
+  </div>
+
+  <div class="card pane" id="p3">
+    <h3>Pansuman sonrası ve evde bakım eğitimi</h3>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>İşlem bitti Ayşe Hanım, çok iyi dayandınız. Rahat mısınız, ağrınız şimdi kaç?</q></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Size yaranızla ilgili birkaç önemli şey söylemek istiyorum:</q>
+      <ul class="clean" style="margin-top:6px">
+        <li><q>Bandı kuru ve temiz tutun. Islanırsa, kirlenirse ya da kenarı kalkarsa bize haber verin.</q></li>
+        <li><q>Yaraya ve banda elinizle dokunmayın; dokunmanız gerekirse önce ellerinizi yıkayın.</q></li>
+        <li><q>Öksürürken ya da hapşırırken bir yastığı karnınıza bastırın, dikişlerinizi destekler.</q></li>
+        <li><q>Doktorunuz izin verdiğinde duş alabilirsiniz; ama küvette oturmak, havuz ve deniz dikişler alınıp yara tamamen kapanana kadar yok.</q></li>
+        <li><q>Bol protein (yumurta, et, süt ürünleri, baklagiller), sebze-meyve yiyin ve yeterince su için; yaranın iyileşmesini hızlandırır.</q></li>
+        <li><q>Sigara iyileşmeyi ciddi şekilde yavaşlatır; mümkünse bu dönemde hiç içmeyin.</q></li>
+        <li><q>Ağır kaldırmayın, doktorunuz izin verene kadar karın kaslarınızı zorlamayın.</q></li>
+      </ul></div></div>
+    <div class="line"><div class="who x">Önemli</div><div class="say"><q>Şunlardan birini fark ederseniz hemen bize ya da doktorunuza haber verin, evdeyseniz hastaneye başvurun:</q>
+      <ul class="clean" style="margin-top:6px">
+        <li><q>Yaranın etrafında giderek artan kızarıklık, şişlik veya sıcaklık</q></li>
+        <li><q>Sarı-yeşil, kötü kokulu akıntı ya da bandı ıslatan kanama</q></li>
+        <li><q>38 derece ve üzeri ateş, titreme</q></li>
+        <li><q>Ağrının azalacağına giderek artması</q></li>
+        <li><q>Yaranın açılması ya da dikişlerin ayrılması</q></li>
+      </ul></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Anlattıklarımı doğru aktarabildim mi emin olmak istiyorum. Hangi durumlarda bize haber vermeniz gerektiğini bana kendi cümlelerinizle söyleyebilir misiniz?</q><span class="act">Geri anlatım (teach-back): hastanın anladığını “Anladınız mı?” diye değil, kendi cümleleriyle tekrar ettirerek kontrol et.</span></div></div>
+    <div class="line"><div class="who h">Hasta</div><div class="say"><q>Kızarıklık artarsa, kötü kokulu akıntı olursa, ateşim çıkarsa… bir de yara açılırsa.</q></div></div>
+    <div class="line"><div class="who">Hemşire</div><div class="say"><q>Çok güzel, tam olarak bunlar. Başka sormak istediğiniz bir şey var mı? Zil burada, bir şey olursa çekin, hemen gelirim.</q><span class="act">Zili ulaşabileceği yere koy, yatağı güvenli konuma al, ellerini yıka, kaydet.</span></div></div>
+  </div>
+
+  <div class="card pane" id="p4">
+    <h3>Zor durumlar için hazır cümleler</h3>
+    <div class="line"><div class="who x">Kaygılı hasta</div><div class="say"><q>Endişelenmeniz çok anlaşılır. Her adımda size ne yaptığımı söyleyeceğim, istediğiniz an dururuz. Derin bir nefes alalım birlikte.</q></div></div>
+    <div class="line"><div class="who x">Ağrı şikâyeti</div><div class="say"><q>Hemen duruyorum. Ağrınızı 0–10 arası kaç olarak hissediyorsunuz? Ağrı kesiciniz için doktorunuzla görüşüp ilacınızı verelim, biraz sonra devam ederiz.</q></div></div>
+    <div class="line"><div class="who x">Yaşlı / işitme güçlüğü</div><div class="say"><q>(Yüzüne bakarak, yavaş ve net) Şimdi … yaranızın … bandını … değiştireceğim.</q><span class="act">Kısa cümleler, göz teması, gerekirse yazılı bilgi. Bağırma; tonunu alçak ve net tut.</span></div></div>
+    <div class="line"><div class="who x">Çocuk &amp; ebeveyn</div><div class="say"><q>Bu bant yaranı koruyan bir kalkan gibi. Eskisini çıkarıp yenisini takacağız. Annen elini tutabilir. Bittiğinde istersen bandın üstüne bir yıldız çizeriz.</q></div></div>
+    <div class="line"><div class="who x">Yarayı görünce üzülen</div><div class="say"><q>İlk günlerde böyle görünmesi normal; kızarıklık ve şişlik zamanla azalacak. İz de aylar içinde solacak. Bugün gördüğüm iyileşme iyi gidiyor.</q></div></div>
+    <div class="line"><div class="who x">Kötü bulgu görünce</div><div class="say"><q>Yaranızın çevresinde biraz kızarıklık var, bunu doktorunuzun da görmesini istiyorum. Bu sık görülen ve tedavisi olan bir durum. Şimdi temizleyip kapatıyorum ve hemen bilgi veriyorum.</q><span class="act">Teşhis koyma (“enfeksiyon olmuş” deme), sakin kal, gözlemi kaydet ve bildir.</span></div></div>
+    <div class="line"><div class="who x">İşlemi reddeden</div><div class="say"><q>Tabii, zorunda değilsiniz. Neden istemediğinizi anlatır mısınız? Pansuman yaranızın enfeksiyon kapmasını önlüyor; biraz sonra tekrar deneyelim mi?</q><span class="act">Reddi kaydet, sorumlu hemşire/hekime bildir.</span></div></div>
+  </div>
+
+  <div class="no-print" style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap">
+    <button class="btn" onclick="window.print()">Yazdır / PDF olarak kaydet</button>
+  </div>
+</section>
+</main>
+
+<footer>
+  Bu site eğitim amaçlıdır. Uygulamada her zaman çalıştığın kurumun protokolü, hekim istemi ve ürünlerin kullanım talimatları önceliklidir.
+</footer>
+
+<script>
+/* ---------- DATA ---------- */
+const D = [
+ {n:"Steril gazlı bez (kuru)", tags:["kapali","az"], c:"#9aa5a6",
+  s:"En temel ve ucuz pansuman. Kapalı insizyonu korur, az akıntıyı emer.",
+  ne:"Pamuklu veya sentetik dokuma/dokumasız bez.", ne_z:"Kapalı insizyonlar, ikincil (üst) pansuman, dren çevresi.",
+  dz:"Yaraya yapışabilir, çıkarırken yeni dokuyu koparıp acıtabilir. Nemi tutmaz, yarayı kurutur.",
+  sure:"Günlük veya ıslandıkça/kirlendikçe.", ip:"Yapışmışsa SF ile ıslatıp öyle kaldır."},
+ {n:"Ada (island) pansuman", tags:["kapali","az"], c:"#0f5c5c",
+  s:"Ortasında emici yastık, kenarları yapışkan. Cerrahi insizyonlarda en sık kullanılan.",
+  ne:"Yapışmaz emici ped + çevresinde yapışkan bant.", ne_z:"Primer kapatılmış cerrahi yaralar, az-orta akıntı.",
+  dz:"Kırılgan derili yaşlılarda yapışkan deriyi zedeleyebilir.",
+  sure:"Ürüne göre; çoğunlukla 2–3 günde bir ya da ıslandıkça.", ip:"Emici ped kesinin tamamını, kenarlardan 2-3 cm taşacak şekilde örtmeli."},
+ {n:"Şeffaf film (poliüretan)", tags:["kapali","az"], c:"#2b5f8f",
+  s:"İnce, şeffaf, yapışkan. Yarayı açmadan görmeyi sağlar; su geçirmez, gaz geçirir.",
+  ne:"Yarı geçirgen poliüretan film.", ne_z:"Akıntısız/çok az akıntılı kapalı insizyon, yüzeyel yara, damar yolu bölgesi, ikincil örtü.",
+  dz:"Akıntıyı emmez; çok akıntıda altında sıvı birikir ve çevre deriyi yumuşatır (maserasyon). Enfekte yarada kullanılmaz.",
+  sure:"7 güne kadar yerinde kalabilir.", ip:"Gergin çekmeden yapıştır; çıkarırken deriye paralel esneterek kaldır."},
+ {n:"Hidrokolloid", tags:["az"], c:"#b7791f",
+  s:"Akıntıyla temas edince jele dönüşür, nemli ortam yaratır. Bir kez konulup günlerce kalabilir.",
+  ne:"Jelatin, pektin, karboksimetilselüloz içeren yapışkan plaka.", ne_z:"Az-orta akıntılı, enfekte olmayan yüzeyel yaralar, granülasyon dokusu.",
+  dz:"Enfekte ve çok akıntılı yarada kullanılmaz. Çıkarınca sarımsı jel ve hafif koku normaldir; enfeksiyonla karıştırılmamalı.",
+  sure:"3–7 gün.", ip:"Yaranın kenarından 2–3 cm taşmalı; jel kenardan sızarsa değiştir."},
+ {n:"Hidrojel", tags:["kuru"], c:"#3b8fb5",
+  s:"%90'a yakını su olan jel. Kuru yarayı nemlendirir, ölü dokunun yumuşamasını sağlar.",
+  ne:"Jel veya jel emdirilmiş plaka.", ne_z:"Kuru, nekrotik (siyah) veya slough (sarı) dokulu yaralar; otolitik debridman.",
+  dz:"Çok akıntılı yarada maserasyon yapar. Üstüne ikincil pansuman gerekir.",
+  sure:"1–3 gün.", ip:"Sadece yara yatağına sür, çevre deriye taşırma."},
+ {n:"Aljinat", tags:["cok","derin"], c:"#2f7d4f",
+  s:"Deniz yosunundan elde edilir. Kendi ağırlığının ~15-20 katı akıntı emer, jele dönüşür; hafif kanamayı durdurur.",
+  ne:"Kalsiyum aljinat lifli tabaka veya şerit.", ne_z:"Orta-çok akıntılı yaralar, boşluklu yaralar (şerit formu), hafif kanayan yaralar.",
+  dz:"Kuru yarada kullanılmaz (yarayı kurutur, yapışır). İkincil pansuman gerekir.",
+  sure:"Doydukça; genelde 1–3 gün (az akıntıda 7 güne kadar).", ip:"Boşluğu gevşekçe doldur, sıkıştırma."},
+ {n:"Köpük (foam)", tags:["cok"], c:"#d4553b",
+  s:"Poliüretan köpük; akıntıyı emer, nemli ortamı korur, yastık gibi basınçtan korur.",
+  ne:"Yapışkanlı veya yapışkansız köpük ped (silikon kenarlı olabilir).", ne_z:"Orta-çok akıntılı yaralar, granülasyon, bası yarası önleme/tedavi.",
+  dz:"Kuru yarada kullanılmaz.",
+  sure:"3–7 gün veya doydukça.", ip:"Silikon kenarlı olanlar çıkarılırken daha az acıtır; kırılgan deride tercih edilir."},
+ {n:"Hidrofiber (CMC)", tags:["cok","derin"], c:"#6b5bb5",
+  s:"Akıntıyı dikey emip lif içinde tutar; çevre derinin ıslanmasını önler.",
+  ne:"Sodyum karboksimetilselüloz lifler.", ne_z:"Çok akıntılı yaralar, boşluklu yaralar.",
+  dz:"Kuru yaraya uygun değil; ikincil pansuman gerekir.",
+  sure:"7 güne kadar veya doydukça.", ip:"Gümüşlü çeşidi enfekte yarada kullanılır."},
+ {n:"Gümüşlü / antimikrobiyal", tags:["enf"], c:"#7d8a8c",
+  s:"Gümüş, iyot veya PHMB içerir; yaradaki bakteri yükünü azaltır.",
+  ne:"Gümüş iyonu içeren köpük, aljinat, hidrofiber vb.", ne_z:"Enfekte veya enfeksiyon riski yüksek yaralar.",
+  dz:"Gümüşe duyarlılık. MR çekimi öncesi çıkarılır. Uzun süre rutin kullanılmaz.",
+  sure:"Ürüne göre; yaklaşık 2 hafta sonra yeniden değerlendir.", ip:"Sistemik enfeksiyonun yerini tutmaz; antibiyotik kararı hekime aittir."},
+ {n:"Bal pansuman (tıbbi)", tags:["enf","kuru"], c:"#c99418",
+  s:"Tıbbi sınıf bal: antibakteriyel, nemli ortam ve ölü dokunun temizlenmesine yardım.",
+  ne:"Tıbbi bal (ör. manuka) emdirilmiş jel veya ped.", ne_z:"Enfekte, kötü kokulu veya ölü dokulu yaralar.",
+  dz:"Arı ürünlerine alerji. Diyabetlilerde kan şekeri izlenmeli. Market balı kullanılmaz!",
+  sure:"1–3 gün.", ip:"İlk uygulamalarda hafif sızlama olabilir."},
+ {n:"Negatif basınçlı yara tedavisi (NPWT / VAC)", tags:["derin","cok"], c:"#1d2b2f",
+  s:"Yaraya köpük konur, film ile kapatılıp pompa ile kontrollü vakum (genelde −125 mmHg) uygulanır.",
+  ne:"Köpük + şeffaf film + tüp + vakum cihazı.", ne_z:"Derin, büyük, ayrılmış (dehisens) cerrahi yaralar, açık karın, greft tespiti.",
+  dz:"Yarada kanser dokusu, tedavi edilmemiş osteomiyelit, açıkta damar/organ, kalın nekroz varsa kullanılmaz. Kanama riskine dikkat.",
+  sure:"Genelde 48–72 saatte bir (enfekte yarada daha sık).", ip:"Alarm çalarsa sızıntıyı kontrol et; cihaz 2 saatten uzun kapalı kalırsa haber ver."},
+ {n:"Yapışmaz temas tabakası", tags:["az","cok"], c:"#5c6b6e",
+  s:"Silikon veya parafinli ağ; yaraya yapışmadan üstteki emici pansumanı ayırır.",
+  ne:"Silikon kaplı veya parafin emdirilmiş delikli ağ.", ne_z:"Hassas granülasyon dokusu, greft, kırılgan deri, yanık.",
+  dz:"Tek başına akıntı emmez; ikincil pansuman gerekir.",
+  sure:"Ürüne göre 7–14 güne kadar yerinde kalabilir.", ip:"Akıntının geçebilmesi için ağ deliklerini tıkama."},
+ {n:"Islak-kuru (wet-to-dry)", tags:[], c:"#a33",
+  s:"Islatılan gazlı bez yaraya konup kurumaya bırakılır, çekilerek çıkarılır. Artık ÖNERİLMİYOR.",
+  ne:"SF ile ıslatılmış gazlı bez.", ne_z:"Eski bir yöntemdir; modern pansumanlar tercih edilir.",
+  dz:"Çıkarırken sağlıklı dokuyu da koparır (seçici olmayan debridman), çok ağrılıdır, yarayı soğutur, enfeksiyon riskini artırabilir.",
+  sure:"—", ip:"Sınavda “neden önerilmez?” diye sorulabilir: ağrı + sağlıklı doku hasarı."}
+];
+const ICON = c => `<svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="6" width="18" height="12" rx="3" fill="${c}" opacity=".25"/><rect x="8" y="9" width="8" height="6" rx="1.5" fill="${c}"/></svg>`;
+
+function renderDressings(f){
+  const w = document.getElementById('dressings');
+  w.innerHTML = D.filter(d => f==='all' || d.tags.includes(f)).map(d => `
+    <div class="card dcard" tabindex="0">
+      <div class="ico">${ICON(d.c)}</div>
+      <h3>${d.n}</h3>
+      <p class="sum">${d.s}</p>
+      <div class="more"><dl class="dl">
+        <dt>Nedir</dt><dd>${d.ne}</dd>
+        <dt>Ne zaman</dt><dd>${d.ne_z}</dd>
+        <dt>Dikkat</dt><dd>${d.dz}</dd>
+        <dt>Değişim</dt><dd>${d.sure}</dd>
+        <dt>İpucu</dt><dd>${d.ip}</dd></dl></div>
+      <span class="tog">Detay ▾</span>
+    </div>`).join('') || '<p class="muted">Bu filtrede pansuman yok.</p>';
+  w.querySelectorAll('.dcard').forEach(el => {
+    const t = () => { el.classList.toggle('open'); el.querySelector('.tog').textContent = el.classList.contains('open') ? 'Kapat ▴' : 'Detay ▾'; };
+    el.onclick = t; el.onkeydown = e => { if(e.key==='Enter'||e.key===' '){e.preventDefault();t();} };
+  });
+}
+document.querySelectorAll('#filters .chip').forEach(b => b.onclick = () => {
+  document.querySelectorAll('#filters .chip').forEach(x => x.classList.remove('on'));
+  b.classList.add('on'); renderDressings(b.dataset.f);
+});
+renderDressings('all');
+
+/* ---------- SELECTOR ---------- */
+const S = {};
+document.querySelectorAll('.opts').forEach(g => g.querySelectorAll('.chip').forEach(b => b.onclick = () => {
+  g.querySelectorAll('.chip').forEach(x => x.classList.remove('on')); b.classList.add('on');
+  S[g.dataset.q] = b.dataset.v; recommend();
+}));
+function recommend(){
+  const r = document.getElementById('selres');
+  if(!S.durum || !S.akinti || !S.enf){ r.className='res note'; r.innerHTML='<b>Sonuç</b>Üç soruyu da cevapla.'; return; }
+  let main=[], extra='', cls='res note ok';
+  if(S.durum==='kapali'){
+    if(S.akinti==='yok'||S.akinti==='az') main=['Ada (island) pansuman','Şeffaf film','Steril gazlı bez'];
+    else main=['Köpük (foam) pansuman','Ada pansuman (sık değişim)'];
+    if(S.akinti==='cok') extra='Kapalı bir insizyondan çok akıntı beklenmez: kanama, seroma veya enfeksiyon açısından değerlendir ve hekime bildir.';
+  } else if(S.durum==='acik'){
+    main = {yok:['Hidrojel + ikincil pansuman'],az:['Hidrokolloid','Yapışmaz temas tabakası + gazlı bez'],orta:['Köpük (foam)','Aljinat + ikincil pansuman'],cok:['Köpük (foam)','Hidrofiber','Aljinat']}[S.akinti];
+  } else {
+    main = {yok:['Hidrojel ile nemlendirilmiş dolgu + ikincil pansuman'],az:['Aljinat şerit (gevşek dolgu)','Hidrofiber şerit'],orta:['Aljinat / hidrofiber şerit + köpük'],cok:['Hidrofiber / aljinat dolgu','NPWT (hekim kararıyla)']}[S.akinti];
+  }
+  if(S.enf==='evet'){
+    cls='res note warn';
+    main = main.map(x => x.includes('film')||x.includes('Hidrokolloid') ? null : x).filter(Boolean);
+    main.unshift('Antimikrobiyal (gümüşlü / iyotlu / bal) pansuman');
+    extra = (extra?extra+' ':'') + 'Enfeksiyon şüphesinde kapalı (oklüzif) şeffaf film ve hidrokolloid kullanılmaz. Kültür ve antibiyotik kararı için hekime bildir, daha sık değerlendir.';
+  }
+  r.className=cls;
+  r.innerHTML = `<b>Uygun seçenekler</b><ul class="clean" style="margin:6px 0">${main.map(m=>`<li>${m}</li>`).join('')}</ul>${extra?`<small>${extra}</small>`:''}`;
+}
+
+/* ---------- STEPS ---------- */
+const STEPS = [
+ ["Hazırlık", [
+  ["Hekim istemini ve hasta dosyasını kontrol et","Pansuman türü, sıklığı, önceki yara kaydı, alerji (iyot, bant, lateks).","Yanlış ürün/alerjik reaksiyonu önler."],
+  ["Hastanın ağrısını değerlendir","Gerekirse istemdeki analjeziği işlemden ~30 dakika önce ver.","İlaç etkisini göstermeye vakit bulur."],
+  ["Malzemeleri hazırla","Steril pansuman seti (penset), steril gazlı bez, oda sıcaklığında SF, steril ve temiz eldiven, yeni pansuman, flaster, atık torbası, su geçirmez örtü, gerekirse maske ve önlük.","İşlem ortasında steril alanı terk etmemek için."],
+  ["Kendini tanıt, hastayı doğrula, işlemi açıkla ve izin al","İki tanımlayıcı ile kimlik doğrulama (ad-soyad + doğum tarihi).","Hasta güvenliği ve iş birliği."],
+  ["Mahremiyeti sağla, pozisyon ver","Perde/paravan; sadece yara bölgesini aç. Yatağı çalışma yüksekliğine getir.","Hasta onuru ve senin ergonomin."],
+  ["El hijyeni","Elleri yıka veya alkol bazlı el antiseptiği kullan.","Enfeksiyon zincirini kırar."]
+ ]],
+ ["Eski pansumanı çıkarma", [
+  ["Temiz (steril olmayan) eldiven giy","Atık torbasını yatağın yakınına, steril alanın uzağına yerleştir.","Kirli pansuman steril alanın üzerinden geçmemeli."],
+  ["Eski pansumanı nazikçe çıkar","Bandı yaraya doğru, deriye paralel çek; deriyi diğer elinle destekle. Yapışmışsa SF ile ıslat.","Deri yırtığını ve ağrıyı önler; yara hattının açılmasını önler."],
+  ["Eski pansumanı incele","Akıntının miktarı, rengi, kokusu. Pansumanı ve eldiveni atık torbasına at.","Değerlendirmenin bir parçası."],
+  ["Yarayı değerlendir","Kenarlar, dikişler, kızarıklık, ödem, akıntı, koku, ağrı.","Enfeksiyon/dehisens erken fark edilir."],
+  ["El hijyeni","Eldivenler çıkarıldıktan sonra.","Eldiven %100 koruma sağlamaz."]
+ ]],
+ ["Steril alan ve temizlik", [
+  ["Steril seti aç","Paketi önce senden uzak kanat, sonra yanlar, en son sana yakın kanat olacak şekilde aç. Steril malzemeleri alana düşür.","Steril alanın üzerinden uzanmamak için."],
+  ["SF'yi dök, steril eldiven giy","SF'yi kabın içine sıçratmadan dök. Steril eldiveni dokunmadan giyme tekniğiyle giy.","Islanan alan steril sayılmaz (ıslaklıkla bakteri geçer)."],
+  ["İnsizyonu temizle","SF ile nemli gazlı bezi penset ile tut. Önce kesi hattı: yukarıdan aşağıya tek hareket. Sonra kesiye paralel çizgilerle dışa doğru. <b>Her silişte yeni gazlı bez.</b>","Temiz bölgeden kirli bölgeye: bakteri yaraya taşınmaz."],
+  ["Dren varsa en son, ayrı temizle","Dren çıkışından başlayarak dışa doğru daireler.","Dren çevresi daha kontamine kabul edilir."],
+  ["Kurula","Aynı yönde, steril kuru gazlı bezle hafifçe tampon yaparak.","Nemli çevre deri maserasyon ve bant tutmama yapar."]
+ ]],
+ ["Kapatma ve sonrası", [
+  ["Yeni pansumanı uygula","Kesiyi tamamen, kenarlardan 2–3 cm taşacak şekilde ört. Pansumanın yara ile temas eden yüzüne dokunma.","Bakteri bariyeri ve akıntının yönetimi."],
+  ["Tarih, saat, paraf yaz","Pansumanın üzerine veya bandına.","Bir sonraki değişim zamanının takibi."],
+  ["Atıkları uygun şekilde at, eldivenleri çıkar","Tıbbi atık (kırmızı) torba; kesici aletler kesici-delici alet kutusuna.","Enfeksiyon kontrolü."],
+  ["Hastayı rahat ettir ve eğitimi ver","Pozisyon, zil yakında, yatak alçak ve kenarlıklar kalkık. Teach-back ile eğit.","Düşme önleme ve öz bakım."],
+  ["El hijyeni ve kayıt","Yara görünümü, akıntı, pansuman türü, hastanın tepkisi, eğitim.","Sürekliliği ve yasal güvenliği sağlar."]
+ ]]
+];
+let doneSet = new Set(); try{ doneSet = new Set(JSON.parse(localStorage.getItem('pansuman-steps')||'[]')); }catch(e){}
+function saveSteps(){ try{ localStorage.setItem('pansuman-steps', JSON.stringify([...doneSet])); }catch(e){} }
+function renderSteps(){
+  let i=0, html='';
+  STEPS.forEach(([h,list]) => {
+    html += `<div class="phase-h">${h}</div><ol class="steps" style="counter-reset:s ${i}">`;
+    list.forEach(([t,d,w]) => { html += `<li class="step ${doneSet.has(i)?'done':''}" data-i="${i}"><span class="n" role="button" aria-label="Adımı işaretle"></span><div><h3>${t}</h3><p>${d}</p><p class="why">Neden? ${w}</p></div></li>`; i++; });
+    html += `</ol>`;
+  });
+  document.getElementById('stepwrap').innerHTML = html;
+  document.querySelectorAll('.step .n').forEach(n => n.onclick = () => {
+    const i = +n.parentElement.dataset.i; doneSet.has(i)?doneSet.delete(i):doneSet.add(i); saveSteps(); renderSteps();
+  });
+  document.getElementById('stepbar').style.width = (doneSet.size/i*100)+'%';
+  document.getElementById('stepcount').textContent = `${doneSet.size} / ${i} adım`;
+}
+document.getElementById('stepreset').onclick = () => { doneSet.clear(); saveSteps(); renderSteps(); };
+renderSteps();
+
+/* ---------- MISTAKES ---------- */
+const M = [
+ ["Aynı gazlı bezle birden fazla siliş","Kirli bölgedeki bakteriyi yara hattına taşır. Her siliş = yeni gazlı bez."],
+ ["Dışarıdan içeri doğru temizlemek","Çevre derideki bakteriyi yaraya sürükler. Her zaman içten (kesi) dışa."],
+ ["Hidrojen peroksit / alkol ile yara içini temizlemek","Yeni oluşan hücreleri öldürür, yakar. Yara içi için SF kullan."],
+ ["Soğuk SF kullanmak","Yara yatağını soğutur; iyileşme yavaşlar, hasta rahatsız olur. Oda sıcaklığında kullan."],
+ ["Steril alanın ıslanması, belin altına inmesi, arkanı dönmek","Sterilite bozulur. Şüphe varsa steril değildir, yenisini aç."],
+ ["Bandı yukarı doğru, hızla çekmek","Deri yırtığı ve ağrı. Deriye paralel, yavaş, deriyi destekleyerek çek."],
+ ["Pansumanın iç yüzüne dokunmak","Yara ile temas eden yüz steril kalmalı; yalnız kenarlardan tut."],
+ ["Kayıt yapmamak / eğitim vermemek","Değişiklikler takip edilemez. Hasta evde enfeksiyon belirtilerini fark edemez."]
+];
+document.getElementById('mistakes').innerHTML = M.map(([a,b]) => `<div class="card"><b style="color:var(--coral)">✗ ${a}</b><p style="margin:.4em 0 0">${b}</p></div>`).join('');
+
+/* ---------- QUIZ ---------- */
+const Q = [
+ ["Cerrahi yara temizliğinde standart olarak kullanılan sıvı hangisidir?",["Hidrojen peroksit","Oda sıcaklığında %0,9 serum fizyolojik","%70 alkol","Soğuk musluk suyu"],1,"SF dokuya zarar vermez, izotoniktir. Peroksit ve alkol granülasyon dokusunu hasarlar."],
+ ["İnsizyon temizliğinde doğru yön hangisidir?",["Dıştan içe doğru","Rastgele, bol hareketle","Kesi hattından dışa doğru, her silişte yeni gazlı bez","Aynı gazlı bezle ileri-geri"],2,"Temizden kirliye ilkesi: en temiz bölge kesi hattıdır."],
+ ["Ameliyathanede konan ilk pansuman genellikle ne kadar süre açılmaz?",["6 saat","24 saat","48 saat","7 gün"],2,"Akıntı, ıslanma veya ayrılma yoksa genellikle ilk 48 saat dokunulmaz."],
+ ["Çok akıntılı, boşluklu bir yara için en uygun seçenek hangisidir?",["Şeffaf film","Hidrojel","Aljinat veya hidrofiber dolgu","Kuru gazlı bez"],2,"Aljinat ve hidrofiber çok emicidir; boşluk gevşekçe doldurulur."],
+ ["Kuru, nekrotik dokulu yarada otolitik debridman için hangisi kullanılır?",["Hidrojel","Aljinat","Köpük","Hidrofiber"],0,"Hidrojel nem vererek ölü dokunun yumuşamasını sağlar."],
+ ["Hidrokolloid pansuman çıkarıldığında sarımsı jel ve hafif koku görülmesi neyi gösterir?",["Kesin enfeksiyon","Ürünün normal özelliği","Alerji","Kanama"],1,"Hidrokolloid akıntıyla jelleşir; bu enfeksiyonla karıştırılmamalı. Yara temizlendikten sonra değerlendir."],
+ ["Islak-kuru (wet-to-dry) pansuman neden artık önerilmez?",["Çok pahalı","Sağlıklı dokuyu da koparır ve ağrılıdır","Çok uzun süre kalır","Su geçirmez"],1,"Seçici olmayan debridmandır; ağrı ve doku hasarı yapar."],
+ ["Şeffaf film pansuman hangi durumda KULLANILMAZ?",["Akıntısız kapalı insizyon","Damar yolu bölgesi","Çok akıntılı ya da enfekte yara","Yüzeyel sıyrık"],2,"Akıntıyı emmez, altında sıvı birikir ve enfeksiyon için uygun ortam oluşur."],
+ ["Dren ve insizyon birlikte varsa hangisi önce temizlenir?",["Dren çevresi","İnsizyon","Fark etmez","İkisi aynı gazlı bezle"],1,"İnsizyon daha temiz kabul edilir; dren alanı en son ve ayrı temizlenir."],
+ ["Evisserasyon fark edildiğinde ilk yapılacak nedir?",["Organları içeri itmek","Kuru gazlı bezle bastırmak","SF ile nemli steril gazlı bezle örtüp yardım çağırmak","Hastayı yürütmek"],2,"Organlar kurumamalı ve geri itilmemeli; hasta yalnız bırakılmaz, hekime hemen haber verilir."],
+ ["Cerrahi alan enfeksiyonu genellikle ameliyattan kaç gün sonra belirti verir?",["İlk 6 saat","3–7. günler","30. günden sonra","Hiçbir zaman"],1,"İlk günlerdeki hafif kızarıklık normaldir; 3–7. günlerde artan bulgular enfeksiyonu düşündürür."],
+ ["Hastanın eğitimi anladığını kontrol etmenin en iyi yolu nedir?",["“Anladınız mı?” diye sormak","Broşür verip çıkmak","Kendi cümleleriyle tekrar ettirmek (teach-back)","Eğitimi yakınına vermek"],2,"Teach-back, anlaşılmayan noktaları gösterir ve tekrar anlatma fırsatı verir."]
+];
+let score=0;
+document.getElementById('quiz').innerHTML = Q.map((q,i) => `<div class="card qi" data-i="${i}"><b>${i+1}. ${q[0]}</b><div class="ch">${q[1].map((c,j)=>`<button data-j="${j}">${c}</button>`).join('')}</div><div class="ex">${q[3]}</div></div>`).join('');
+document.querySelectorAll('.qi').forEach(card => card.querySelectorAll('button').forEach(b => b.onclick = () => {
+  if(card.classList.contains('ans')) return;
+  const q = Q[+card.dataset.i], j = +b.dataset.j;
+  card.classList.add('ans');
+  card.querySelectorAll('button')[q[2]].classList.add('right');
+  if(j===q[2]) score++; else b.classList.add('wrong');
+  document.getElementById('score').textContent = `${score} / ${Q.length}`;
+}));
+
+/* ---------- TABS ---------- */
+document.querySelectorAll('#tabs .tab').forEach(t => t.onclick = () => {
+  document.querySelectorAll('#tabs .tab').forEach(x => x.classList.remove('on'));
+  document.querySelectorAll('.pane').forEach(x => x.classList.remove('on'));
+  t.classList.add('on'); document.getElementById(t.dataset.t).classList.add('on');
+});
+
+/* ---------- NAV ---------- */
+const links=[...document.querySelectorAll('#nav a')], secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+addEventListener('scroll',()=>{
+  const y=scrollY+100; let cur=0; secs.forEach((s,i)=>{ if(s.offsetTop<=y) cur=i; });
+  links.forEach((a,i)=>a.classList.toggle('on', i===cur && scrollY>300));
+  const h=document.documentElement; document.getElementById('prog').style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%';
+},{passive:true});
+</script>
+</body>
+</html>
